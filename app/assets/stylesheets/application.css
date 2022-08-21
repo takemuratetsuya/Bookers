@@ -29,7 +29,7 @@ p {
   margin: 33px;
 }
 
-#notice {
+#notice, #update, #destroy {
   color: green;
 }
 

@@ -1,4 +1,15 @@
-<p id = "notice"></p>
+<% if flash[:notice] %>
+  <p id="notice">
+    <%= flash[:notice] %>
+  </p>
+<% end %>
+   
+<% if flash[:update] %>
+     <p id="update">
+       <%= flash[:update] %>
+     </p>
+<% end %>
+
 <p>
   <strong>Title:</strong>
   <%= @book.title %>
@@ -8,6 +19,6 @@
   <%= @book.body %>
 </p>
 
-<%= link_to "edit", edit_book_path(@book.id) %>
+<%= link_to "Edit", edit_book_path(@book.id) %>
 |
-<%= link_to "削除", book_path(@book.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
+<%= link_to "Back", books_path %>
